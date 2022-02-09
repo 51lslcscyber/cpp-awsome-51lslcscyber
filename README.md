@@ -1,2 +1,2 @@
 # cpp-awsome-51lslcscyber
-高能公开，C++项目，OCR,CAFFE项目API，CPP项目代码混淆工具，支持控件控绑及QT，基于c++14
+基于C++14和CPP
