@@ -100,13 +100,20 @@ static int removeDuplicates(int *nums, int numsSize)
 	for (i = 1; i < numsSize; i++)
 	{
 		if (nums[len] == nums[i])
-		{
-
+        {
+            count++;
+            nums[--len] = nums[i];
 		}
 		else
 		{
-			count = 1;
-			nums[++len] = nums[i];
+            if (count < 2)
+            {
+                if (count < 2)
+                {
+                    count++;
+                    nums[++len] = nums[i];
+                }
+            }
 		}
 	}
 	return len + 1;
@@ -114,7 +121,7 @@ static int removeDuplicates(int *nums, int numsSize)
 int main(int argc, char **argv)
 {
 	int i, count = argc - 1;
-	int *nums = malloc(count * sizeof(int));
+	int *nums = static_cast<int *>(malloc(count * sizeof(int)));
 	for (i = 0; i < count; i++)
 	{
 		nums[i] = atoi(argv[i + 1]);
